@@ -15,6 +15,10 @@ class Post extends Model
         return $query->whereStatus(true);
     }
 
+    public function scopePostDetail($query){
+        return $query->with('user:id,name','categories:name');
+    }
+
     public function categories(){
         return $this->belongsToMany(Category::class);
     }

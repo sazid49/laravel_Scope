@@ -11,7 +11,7 @@ class HomeController extends Controller
     public function index(){
 
     $posts = Post::active()
-                 ->with('user:id,name','categories:name')
+                 ->postdetail()
                  ->get();
     dd($posts->toArray());
 
